@@ -16,7 +16,7 @@ module.exports = function (app) {
             })
     });
 
-    app.get("/api/workouts/week", (req, res) => {
+    app.get("/api/workouts/range", (req, res) => {
         db.Workout.find({})
             .then(dbWorkout => {
                 const workoutWeek = (dbWorkout.length > 7 ? dbWorkout.slice(dbWorkout.length - 7, dbWorkout.length) : dbWorkout);
